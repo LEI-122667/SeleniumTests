@@ -1,4 +1,5 @@
 package com.tests.selenium.seleniumtests;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -13,13 +14,26 @@ import static com.codeborne.selenide.Selenide.*;
 public class MainPageTest {
     MainPage mainPage = new MainPage();
 
-@BeforeAll    public static void setUpAll() {
+    @BeforeAll
+    public static void setUpAll() {
+        Configuration.timeout = 8000;
         Configuration.browserSize = "1280x800";
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
-@BeforeEach    public void setUp() {
+    @BeforeEach
+    public void setUp() {
         open("https://www.jetbrains.com/");
+        closeCookiesIfVisible(); // <<< FECHA O BANNER ANTES DE QUALQUER COISA
+    }
+
+    // -------------------------------------------------------
+    // MÉTODO QUE FECHA O POPUP DE COOKIES DA JETBRAINS
+    // -------------------------------------------------------
+    private void closeCookiesIfVisible() {
+        if ($(".js-dismiss").exists()) {
+            $(".js-dismiss").click();
+        }
     }
 
     @Test
@@ -29,7 +43,8 @@ public class MainPageTest {
         $("[data-test='search-input']").sendKeys("Selenium");
         $("button[data-test='full-search-button']").click();
 
-        $("input[data-test='search-input']").shouldHave(attribute("value", "Selenium"));
+        $("input[data-test='search-input']")
+                .shouldHave(attribute("value", "Selenium"));
     }
 
     @Test
@@ -46,5 +61,6 @@ public class MainPageTest {
 
         $("#products-page").shouldBe(visible);
 
-assertEquals("All Developer Tools and Products by JetBrains", Selenide.title());    }
+        assertEquals("All Developer Tools and Products by JetBrains", Selenide.title());
+    }
 }
