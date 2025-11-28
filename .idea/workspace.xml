@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="252847f9-e8ec-49ca-ac1f-af828da84f09" name="Changes" comment="File Upload Page e Test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/NotificationPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +37,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/LEI-122667/SeleniumTests.git&quot;,
-    &quot;accountId&quot;: &quot;a06067a6-2249-4013-9873-cc5d3dfee2bf&quot;
+    &quot;accountId&quot;: &quot;f1e88825-e331-4d82-86f4-98cf2ac78113&quot;
   }
 }</component>
   <component name="MavenRunner">
@@ -54,29 +51,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.DynamicLoadingTest.executor": "Run",
-    "JUnit.FileUploadTest.executor": "Run",
-    "JUnit.MainPageTest (1).executor": "Run",
-    "JUnit.MainPageTest.executor": "Run",
-    "JUnit.MainPageTest.navigationToAllTools.executor": "Run",
-    "JUnit.MainPageTest.search.executor": "Run",
-    "JUnit.MainPageTest.toolsMenu.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "122667",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.DynamicLoadingTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FileUploadTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainPageTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainPageTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainPageTest.navigationToAllTools.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainPageTest.search.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainPageTest.toolsMenu.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;LEI-122686&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.FileUploadTest">
     <configuration name="DynamicLoadingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumTests" />
@@ -158,21 +155,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FileUploadTest" />
-        <item itemvalue="JUnit.DynamicLoadingTest" />
-        <item itemvalue="JUnit.MainPageTest.navigationToAllTools" />
         <item itemvalue="JUnit.MainPageTest.toolsMenu" />
         <item itemvalue="JUnit.MainPageTest.search" />
+        <item itemvalue="JUnit.MainPageTest.navigationToAllTools" />
+        <item itemvalue="JUnit.FileUploadTest" />
+        <item itemvalue="JUnit.DynamicLoadingTest" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
