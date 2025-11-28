@@ -4,15 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252847f9-e8ec-49ca-ac1f-af828da84f09" name="Changes" comment="" />
+    <list default="true" id="252847f9-e8ec-49ca-ac1f-af828da84f09" name="Changes" comment="File Upload Page e Test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LEI-122667&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LEI-122667/SeleniumTests.git&quot;,
+    &quot;accountId&quot;: &quot;a06067a6-2249-4013-9873-cc5d3dfee2bf&quot;
+  }
+}</component>
+  <component name="MavenRunner">
+    <option name="jreName" value="21" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="35mssPR6OAo81qAmzMCrHzBXuUQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -20,13 +56,116 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.DynamicLoadingTest.executor": "Run",
+    "JUnit.FileUploadTest.executor": "Run",
+    "JUnit.MainPageTest (1).executor": "Run",
+    "JUnit.MainPageTest.executor": "Run",
+    "JUnit.MainPageTest.navigationToAllTools.executor": "Run",
+    "JUnit.MainPageTest.search.executor": "Run",
+    "JUnit.MainPageTest.toolsMenu.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "122667",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="JUnit.FileUploadTest">
+    <configuration name="DynamicLoadingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.selenium.seleniumtests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests.selenium.seleniumtests" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.selenium.seleniumtests.DynamicLoadingTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileUploadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.selenium.seleniumtests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests.selenium.seleniumtests" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.selenium.seleniumtests.FileUploadTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPageTest.navigationToAllTools" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.selenium.seleniumtests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests.selenium.seleniumtests" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.selenium.seleniumtests.MainPageTest" />
+      <option name="METHOD_NAME" value="navigationToAllTools" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPageTest.search" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.selenium.seleniumtests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests.selenium.seleniumtests" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.selenium.seleniumtests.MainPageTest" />
+      <option name="METHOD_NAME" value="search" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPageTest.toolsMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.selenium.seleniumtests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests.selenium.seleniumtests" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.selenium.seleniumtests.MainPageTest" />
+      <option name="METHOD_NAME" value="toolsMenu" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FileUploadTest" />
+        <item itemvalue="JUnit.DynamicLoadingTest" />
+        <item itemvalue="JUnit.MainPageTest.navigationToAllTools" />
+        <item itemvalue="JUnit.MainPageTest.toolsMenu" />
+        <item itemvalue="JUnit.MainPageTest.search" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -42,11 +181,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763726788157</updated>
-      <workItem from="1763726789124" duration="21000" />
+      <workItem from="1763726789124" duration="1286000" />
+      <workItem from="1764167582827" duration="12000" />
+      <workItem from="1764267683351" duration="6576000" />
+      <workItem from="1764341382268" duration="150000" />
     </task>
+    <task id="LOCAL-00001" summary="Inicialização do repo">
+      <option name="closed" value="true" />
+      <created>1763726914412</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763726914412</updated>
+    </task>
+    <task id="LOCAL-00002" summary="File Upload Page e Test">
+      <option name="closed" value="true" />
+      <created>1764275100475</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1764275100475</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Inicialização do repo" />
+    <MESSAGE value="File Upload Page e Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="File Upload Page e Test" />
   </component>
 </project>
