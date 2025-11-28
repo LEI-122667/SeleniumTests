@@ -1,0 +1,296 @@
+Index: src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.tests.selenium.seleniumtests;\r\nimport com.codeborne.selenide.Configuration;\r\nimport com.codeborne.selenide.Selenide;\r\nimport com.codeborne.selenide.logevents.SelenideLogger;\r\nimport io.qameta.allure.selenide.AllureSelenide;\r\nimport org.junit.jupiter.api.*;\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\nimport static com.codeborne.selenide.Condition.attribute;\r\nimport static com.codeborne.selenide.Condition.visible;\r\nimport static com.codeborne.selenide.Selenide.*;\r\n\r\npublic class MainPageTest {\r\n    MainPage mainPage = new MainPage();\r\n\r\n@BeforeAll    public static void setUpAll() {\r\n        Configuration.browserSize = \"1280x800\";\r\n        SelenideLogger.addListener(\"allure\", new AllureSelenide());\r\n    }\r\n\r\n@BeforeEach    public void setUp() {\r\n        open(\"https://www.jetbrains.com/\");\r\n    }\r\n\r\n    @Test\r\n    public void search() {\r\n        mainPage.searchButton.click();\r\n\r\n        $(\"[data-test='search-input']\").sendKeys(\"Selenium\");\r\n        $(\"button[data-test='full-search-button']\").click();\r\n\r\n        $(\"input[data-test='search-input']\").shouldHave(attribute(\"value\", \"Selenium\"));\r\n    }\r\n\r\n    @Test\r\n    public void toolsMenu() {\r\n        mainPage.toolsMenu.click();\r\n\r\n        $(\"div[data-test='main-submenu']\").shouldBe(visible);\r\n    }\r\n\r\n    @Test\r\n    public void navigationToAllTools() {\r\n        mainPage.seeDeveloperToolsButton.click();\r\n        mainPage.findYourToolsButton.click();\r\n\r\n        $(\"#products-page\").shouldBe(visible);\r\n\r\nassertEquals(\"All Developer Tools and Products by JetBrains\", Selenide.title());    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java b/src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java
+--- a/src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java	(revision 592f9aec1dce5dc4bb656b08159347c3cbf0fe82)
++++ b/src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java	(date 1763743142824)
+@@ -13,12 +13,12 @@
+ public class MainPageTest {
+     MainPage mainPage = new MainPage();
+ 
+-@BeforeAll    public static void setUpAll() {
++    @BeforeAll    public static void setUpAll() {
+         Configuration.browserSize = "1280x800";
+         SelenideLogger.addListener("allure", new AllureSelenide());
+     }
+ 
+-@BeforeEach    public void setUp() {
++    @BeforeEach    public void setUp() {
+         open("https://www.jetbrains.com/");
+     }
+ 
+@@ -46,5 +46,5 @@
+ 
+         $("#products-page").shouldBe(visible);
+ 
+-assertEquals("All Developer Tools and Products by JetBrains", Selenide.title());    }
+-}
++        assertEquals("All Developer Tools and Products by JetBrains", Selenide.title());    }
++}
+\ No newline at end of file
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n  <modelVersion>4.0.0</modelVersion>\r\n\r\n  <groupId>com.tests.selenium</groupId>\r\n  <artifactId>SeleniumTests</artifactId>\r\n  <version>1.0-SNAPSHOT</version>\r\n  <name>SeleniumTests</name>\r\n\r\n  <properties>\r\n    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n    <maven.compiler.target>25</maven.compiler.target>\r\n    <maven.compiler.source>25</maven.compiler.source>\r\n<junit.version>5.11.3</junit.version><aspectj.version>1.9.22.1</aspectj.version>\r\n    <allure.version>2.29.0</allure.version>  </properties>\r\n\r\n  <dependencies>\r\n<dependency>\r\n      <groupId>io.qameta.allure</groupId>\r\n      <artifactId>allure-junit5</artifactId>\r\n      <version>${allure.version}</version>\r\n      <scope>test</scope>\r\n    </dependency><dependency>\r\n      <groupId>org.aspectj</groupId>\r\n      <artifactId>aspectjweaver</artifactId>\r\n      <version>${aspectj.version}</version>\r\n      <scope>provided</scope>\r\n    </dependency><dependency>\r\n      <groupId>com.codeborne</groupId>\r\n      <artifactId>selenide </artifactId>\r\n      <version>7.6.0</version>\r\n      <scope>test</scope>\r\n    </dependency><dependency>\r\n      <groupId>io.qameta.allure</groupId>\r\n      <artifactId>allure-selenide</artifactId>\r\n      <version>${allure.version}</version>\r\n      <scope>test</scope>\r\n    </dependency><dependency>\r\n      <groupId>org.junit.jupiter</groupId>\r\n      <artifactId>junit-jupiter-api</artifactId>\r\n      <version>${junit.version}</version>\r\n      <scope>test</scope>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.junit.jupiter</groupId>\r\n      <artifactId>junit-jupiter-engine</artifactId>\r\n      <version>${junit.version}</version>\r\n      <scope>test</scope>\r\n    </dependency><dependency>\r\n      <groupId>org.slf4j</groupId>\r\n      <artifactId>slf4j-simple</artifactId>\r\n      <version>2.0.16</version>\r\n      <scope>test</scope>\r\n    </dependency>  </dependencies>\r\n  <build>\r\n    <plugins>\r\n<plugin>\r\n        <groupId>org.apache.maven.plugins</groupId>\r\n        <artifactId>maven-surefire-plugin</artifactId>\r\n        <version>3.5.2</version>\r\n        <configuration>\r\n          <testFailureIgnore>true</testFailureIgnore>\r\n<argLine>\r\n            -javaagent:\"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar\"\r\n          </argLine>\r\n          <systemProperties>\r\n            <property>\r\n              <name>allure.results.directory</name>\r\n              <value>${project.build.directory}/allure-results</value>\r\n            </property>\r\n          </systemProperties>        </configuration>\r\n<dependencies>\r\n          <dependency>\r\n            <groupId>org.aspectj</groupId>\r\n            <artifactId>aspectjweaver</artifactId>\r\n            <version>${aspectj.version}</version>\r\n          </dependency>\r\n        </dependencies>      </plugin>\r\n<plugin>\r\n        <groupId>io.qameta.allure</groupId>\r\n        <artifactId>allure-maven</artifactId>\r\n        <version>2.15.2</version>\r\n      </plugin>    </plugins>\r\n  </build>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision 592f9aec1dce5dc4bb656b08159347c3cbf0fe82)
++++ b/pom.xml	(date 1763742475892)
+@@ -29,8 +29,8 @@
+       <scope>provided</scope>
+     </dependency><dependency>
+       <groupId>com.codeborne</groupId>
+-      <artifactId>selenide </artifactId>
+-      <version>7.6.0</version>
++      <artifactId>selenide</artifactId>
++      <version>7.7.2</version>
+       <scope>test</scope>
+     </dependency><dependency>
+       <groupId>io.qameta.allure</groupId>
+@@ -53,7 +53,8 @@
+       <artifactId>slf4j-simple</artifactId>
+       <version>2.0.16</version>
+       <scope>test</scope>
+-    </dependency>  </dependencies>
++    </dependency>
++  </dependencies>
+   <build>
+     <plugins>
+ <plugin>
+@@ -62,9 +63,6 @@
+         <version>3.5.2</version>
+         <configuration>
+           <testFailureIgnore>true</testFailureIgnore>
+-<argLine>
+-            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+-          </argLine>
+           <systemProperties>
+             <property>
+               <name>allure.results.directory</name>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"252847f9-e8ec-49ca-ac1f-af828da84f09\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 0\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"35mssPR6OAo81qAmzMCrHzBXuUQ\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"252847f9-e8ec-49ca-ac1f-af828da84f09\" name=\"Changes\" comment=\"\" />\r\n      <created>1763726788157</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1763726788157</updated>\r\n      <workItem from=\"1763726789124\" duration=\"21000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 592f9aec1dce5dc4bb656b08159347c3cbf0fe82)
++++ b/.idea/workspace.xml	(date 1764341509067)
+@@ -4,15 +4,60 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="252847f9-e8ec-49ca-ac1f-af828da84f09" name="Changes" comment="" />
++    <list default="true" id="252847f9-e8ec-49ca-ac1f-af828da84f09" name="Changes" comment="DynamicLoadingPage e Test">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPage.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/selenium/seleniumtests/MainPageTest.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 0
+-}]]></component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Class" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="LEI-122704" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;LEI-122704&quot;
++  }
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/LEI-122667/SeleniumTests.git&quot;,
++    &quot;accountId&quot;: &quot;d3518d80-0de3-4d6c-adbe-054d11ccf430&quot;
++  },
++  &quot;recentNewPullRequestHead&quot;: {
++    &quot;server&quot;: {
++      &quot;useHttp&quot;: false,
++      &quot;host&quot;: &quot;github.com&quot;,
++      &quot;port&quot;: null,
++      &quot;suffix&quot;: null
++    },
++    &quot;owner&quot;: &quot;LEI-122667&quot;,
++    &quot;repository&quot;: &quot;SeleniumTests&quot;
++  }
++}</component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
++  </component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 0
++}</component>
+   <component name="ProjectId" id="35mssPR6OAo81qAmzMCrHzBXuUQ" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+@@ -20,21 +65,99 @@
+   </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
++    "JUnit.DynamicLoadingTest.executor": "Run",
++    "JUnit.MainPageTest.executor": "Run",
++    "JUnit.MainPageTest.search.executor": "Debug",
+     "ModuleVcsDetector.initialDetectionPerformed": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "git-widget-placeholder": "Dinamico",
++    "ignore.virus.scanning.warn.message": "true",
+     "kotlin-language-version-configured": "true",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "project.structure.last.edited": "Project",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
+     "settings.editor.selected.configurable": "preferences.pluginManager",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
++  <component name="RunManager" selected="JUnit.DynamicLoadingTest">
++    <configuration name="DynamicLoadingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="SeleniumTests" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="com.tests.selenium.seleniumtests.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="com.tests.selenium.seleniumtests" />
++      <option name="MAIN_CLASS_NAME" value="com.tests.selenium.seleniumtests.DynamicLoadingTest" />
++      <option name="TEST_OBJECT" value="class" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="MainPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="SeleniumTests" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="com.tests.selenium.seleniumtests.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
++      <option name="ALTERNATIVE_JRE_PATH" value="ms-21" />
++      <option name="PACKAGE_NAME" value="com.tests.selenium.seleniumtests" />
++      <option name="MAIN_CLASS_NAME" value="com.tests.selenium.seleniumtests.MainPageTest" />
++      <option name="METHOD_NAME" value="" />
++      <option name="TEST_OBJECT" value="class" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="MainPageTest.search" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="SeleniumTests" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="com.tests.selenium.seleniumtests.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="com.tests.selenium.seleniumtests" />
++      <option name="MAIN_CLASS_NAME" value="com.tests.selenium.seleniumtests.MainPageTest" />
++      <option name="METHOD_NAME" value="search" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <list>
++      <item itemvalue="JUnit.DynamicLoadingTest" />
++      <item itemvalue="JUnit.MainPageTest.search" />
++      <item itemvalue="JUnit.MainPageTest" />
++    </list>
++    <recent_temporary>
++      <list>
++        <item itemvalue="JUnit.DynamicLoadingTest" />
++        <item itemvalue="JUnit.MainPageTest.search" />
++        <item itemvalue="JUnit.MainPageTest" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
++        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
++        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+       </set>
+     </attachedChunks>
+   </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+       <changelist id="252847f9-e8ec-49ca-ac1f-af828da84f09" name="Changes" comment="" />
+@@ -43,10 +166,25 @@
+       <option name="presentableId" value="Default" />
+       <updated>1763726788157</updated>
+       <workItem from="1763726789124" duration="21000" />
++      <workItem from="1763738526377" duration="5062000" />
++      <workItem from="1764340868532" duration="635000" />
+     </task>
++    <task id="LOCAL-00001" summary="DynamicLoadingPage e Test">
++      <option name="closed" value="true" />
++      <created>1763743494781</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1763743494781</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="DynamicLoadingPage e Test" />
++    <option name="LAST_COMMIT_MESSAGE" value="DynamicLoadingPage e Test" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: src/test/java/com/tests/selenium/seleniumtests/MainPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.tests.selenium.seleniumtests;\r\nimport com.codeborne.selenide.SelenideElement;\r\n\r\nimport static com.codeborne.selenide.Selenide.$;\r\nimport static com.codeborne.selenide.Selenide.$x;\r\n\r\n// page_url = https://www.jetbrains.com/\r\npublic class MainPage {\r\n  public SelenideElement seeDeveloperToolsButton = $x(\"//*[@data-test-marker='Developer Tools']\");\r\n  public SelenideElement findYourToolsButton = $x(\"//*[@data-test='suggestion-action']\");\r\n  public SelenideElement toolsMenu = $x(\"//div[@data-test='main-menu-item' and @data-test-marker = 'Developer Tools']\");\r\n  public SelenideElement searchButton = $(\"[data-test='site-header-search-action']\");\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/tests/selenium/seleniumtests/MainPage.java b/src/test/java/com/tests/selenium/seleniumtests/MainPage.java
+--- a/src/test/java/com/tests/selenium/seleniumtests/MainPage.java	(revision 592f9aec1dce5dc4bb656b08159347c3cbf0fe82)
++++ b/src/test/java/com/tests/selenium/seleniumtests/MainPage.java	(date 1763743156607)
+@@ -10,4 +10,4 @@
+   public SelenideElement findYourToolsButton = $x("//*[@data-test='suggestion-action']");
+   public SelenideElement toolsMenu = $x("//div[@data-test='main-menu-item' and @data-test-marker = 'Developer Tools']");
+   public SelenideElement searchButton = $("[data-test='site-header-search-action']");
+-}
++}
+\ No newline at end of file

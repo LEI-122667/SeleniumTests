@@ -13,12 +13,12 @@ import static com.codeborne.selenide.Selenide.*;
 public class MainPageTest {
     MainPage mainPage = new MainPage();
 
-@BeforeAll    public static void setUpAll() {
+    @BeforeAll    public static void setUpAll() {
         Configuration.browserSize = "1280x800";
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
-@BeforeEach    public void setUp() {
+    @BeforeEach    public void setUp() {
         open("https://www.jetbrains.com/");
     }
 
@@ -46,5 +46,5 @@ public class MainPageTest {
 
         $("#products-page").shouldBe(visible);
 
-assertEquals("All Developer Tools and Products by JetBrains", Selenide.title());    }
+        assertEquals("All Developer Tools and Products by JetBrains", Selenide.title());    }
 }
